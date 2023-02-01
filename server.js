@@ -96,8 +96,10 @@ io.on("connection", (socket) => {
 //StrictQuery
 mongoose.set('strictQuery', false);
 
+const URL = process.env.MONGOURL
+
 //データベース接続
-mongoose.connect(process.env.MONGOURL).then(() => {
+mongoose.connect(URL).then(() => {
   console.log("DBと接続中です");
 }).catch((err) => {
   console.log("DBとの接続に失敗しました")
