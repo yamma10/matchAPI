@@ -93,6 +93,8 @@ io.on("connection", (socket) => {
   })
 })
 
+//StrictQuery
+mongoose.set('strictQuery', false);
 
 //データベース接続
 mongoose.connect(process.env.MONGOURL).then(() => {
