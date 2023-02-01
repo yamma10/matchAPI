@@ -8,7 +8,7 @@ const messageRoute = require("./routes/messages")
 
 const Message = require("./models/Message");
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const mongoose = require("mongoose");
 const path = require("path");
 require("dotenv").config();
