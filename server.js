@@ -93,6 +93,10 @@ io.on("connection", (socket) => {
   })
 })
 
+const URL = process.env.MONGOURL
+
+console.log("URLは" + URL)
+
 
 //データベース接続
 mongoose.connect(process.env.MONGOURL).then(() => {
