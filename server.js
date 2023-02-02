@@ -6,6 +6,8 @@ const postRoute = require("./routes/posts")
 const uploadRoute = require("./routes/upload");
 const messageRoute = require("./routes/messages")
 
+const cors = require('cors');
+
 const Message = require("./models/Message");
 
 const PORT = process.env.PORT || 5000;
@@ -21,9 +23,9 @@ const Room = require("./models/Room");
 
 //Serverインスタンスを作成
 const io = new Server(server, {
-  //originプロパティで指定したURL空の接続を許可する
+  //originプロパティで指定したURLからの接続を許可する
   cors: {
-    origin: ["http://localhost:3000"]
+    origin: ["https://sgamatc.com"]
   }
 });
 
@@ -118,7 +120,10 @@ app.use("/api/auth", authRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/upload", uploadRoute);
 app.use("/api/message", messageRoute);
-
+app.use(cors({
+  origin: 'https://sgamatc.com',
+  optionsSuccessStatus: 200
+}));
 
 
 
