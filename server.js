@@ -125,6 +125,6 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
-
+console.log(PORT)
 
 server.listen(PORT, () => console.log("サーバーが起動しました"))
