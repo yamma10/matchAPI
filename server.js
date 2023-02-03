@@ -16,8 +16,8 @@ const path = require("path");
 require("dotenv").config();
 
 //Socket.io
-const https = require("https");
-const server = https.createServer(app);
+const http = require("http");
+const server = http.createServer(app);
 const { Server } = require("socket.io");
 const Room = require("./models/Room");
 
