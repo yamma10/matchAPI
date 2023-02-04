@@ -125,4 +125,12 @@ app.use(cors({
   optionsSuccessStatus: 200
 }));
 
+
+app.get("/", (req, res) => {
+  res.send("hello world");
+})
+
+
+
+
 server.listen(PORT, () => console.log("サーバーが起動しました"))
